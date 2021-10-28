@@ -8,7 +8,7 @@ const AllExperience = () => {
     const [currentPage,setCurrentPage] = useState(0);
     const size = 10;
     useEffect(()=>{
-        fetch(`http://localhost:5000/tourExperiences?page=${currentPage}&&size=${size} `)
+        fetch(`https://pacific-peak-55882.herokuapp.com/tourExperiences?page=${currentPage}&&size=${size} `)
             .then(res=>res.json())
             .then(data=>{
                 setTourExperiences(data.experiences)

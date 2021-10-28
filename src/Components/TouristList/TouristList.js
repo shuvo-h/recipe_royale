@@ -7,7 +7,7 @@ const TouristList = () => {
     const {user} = useAuth();
     const [users,setUsers] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/users/list')
+        fetch('https://pacific-peak-55882.herokuapp.com/users/list')
             .then(res=>res.json())
             .then(data=>setUsers(data))
     },[])

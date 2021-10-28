@@ -6,7 +6,7 @@ const ExperienceDetails = () => {
     const [details,setDetails] = useState({});
     const {img, place, rating, txt, visit_dt} = details;
     useEffect(()=>{
-        fetch(`http://localhost:5000/tourExperience/${id}`)
+        fetch(`https://pacific-peak-55882.herokuapp.com/tourExperience/${id}`)
             .then(res=>res.json())
             .then(data=>setDetails(data))
     },[id])

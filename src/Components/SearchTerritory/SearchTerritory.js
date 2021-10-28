@@ -5,7 +5,7 @@ const SearchTerritory = () => {
     const {searchTxt} = useParams();
     console.log(searchTxt);
     useEffect(()=>{
-        fetch(`http://localhost:5000/tourExperience/title?search=${searchTxt}`,{
+        fetch(`https://pacific-peak-55882.herokuapp.com/title?search=${searchTxt}`,{
             method:"post",
             headers:{
                 "content-type":"application/json"

@@ -25,7 +25,7 @@ const Registration = () => {
         })
     }
     const updateUserToDB = () =>{
-        fetch('http://localhost:5000/newuser',{
+        fetch('https://pacific-peak-55882.herokuapp.com/newuser',{
             method: "POST",
             headers: {
                 "content-type":"application/json"

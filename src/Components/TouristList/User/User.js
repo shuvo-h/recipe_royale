@@ -10,7 +10,7 @@ const User = (props) => {
         let permission = window.confirm(`Do you want to delete ${displayName}?`);
         
         if (permission) {
-            fetch(`http://localhost:5000/user/delete/${id}`,{
+            fetch(`https://pacific-peak-55882.herokuapp.com/user/delete/${id}`,{
                 method: "DELETE",
             })
             .then(res=>res.json())
