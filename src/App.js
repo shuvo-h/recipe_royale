@@ -1,23 +1,48 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './Components/Navbar/Navbar'
+import Home from './Components/Home/Home';
+import ExperienceDetails from './Components/ExperienceDetails/ExperienceDetails';
+import SearchTerritory from './Components/SearchTerritory/SearchTerritory';
+import Login from './Components/Admin/Login/Login';
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Registration from './Components/Admin/Login/Registration';
+import TouristList from './Components/TouristList/TouristList';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AuthProvider>
+        <Router>
+          <Navbar></Navbar>
+          <Switch>
+            <Route path="/login">
+                <Login></Login>
+            </Route>
+            <Route path="/registration">
+                <Registration></Registration>
+            </Route>
+            <PrivateRoute path="/tourexperience/detalis/:id">
+                <ExperienceDetails></ExperienceDetails>
+            </PrivateRoute>
+            <PrivateRoute path="/tourist-list">
+                <TouristList></TouristList>
+            </PrivateRoute>
+            <Route path="/territoryFind/:searchTxt">
+              <SearchTerritory></SearchTerritory>
+            </Route>
+            <Route path="/home">
+                <Home></Home>
+            </Route>
+            <Route path="/">
+                <Home></Home>
+            </Route>
+          </Switch>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
