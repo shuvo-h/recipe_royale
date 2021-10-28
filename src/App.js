@@ -10,6 +10,8 @@ import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Registration from './Components/Admin/Login/Registration';
 import TouristList from './Components/TouristList/TouristList';
+import Footer from './Components/Footer/Footer';
+import Mapbox from './Components/Footer/MapBox/Mapbox';
 
 
 function App() {
@@ -24,6 +26,9 @@ function App() {
             </Route>
             <Route path="/registration">
                 <Registration></Registration>
+            </Route>
+            <Route path="/mapbox">
+                <Mapbox></Mapbox>
             </Route>
             <PrivateRoute path="/tourexperience/detalis/:id">
                 <ExperienceDetails></ExperienceDetails>
@@ -41,6 +46,7 @@ function App() {
                 <Home></Home>
             </Route>
           </Switch>
+          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>

@@ -6,51 +6,57 @@ import { useEffect } from "react";
 firebaseInitialization()
 const useFirebase = () => {
     const [user,setUser] = useState({});
-    const [isLoading,setIsLoaging] = useState(true);
-
+    const [isLoading,setIsLoading] = useState(true);
+    
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
     const signInWithGoogle = () =>{
-        setIsLoaging(true);
+        setIsLoading(true);
         return signInWithPopup(auth,googleProvider)
     }
 
     useEffect(()=>{
-        setIsLoaging(true)
+        setIsLoading(true)
         onAuthStateChanged(auth, user=>{
             if (user) {
                 setUser(user)
-                setIsLoaging(false)
+            }else{
+                setUser({})
             }
+            setIsLoading(false)
         })
     },[auth])
-
+    
     const newRegistration = (auth,email,password) =>{
+        setIsLoading(true)
         return createUserWithEmailAndPassword(auth,email,password)
     }
     const signInExistUser = (auth,email,password) =>{
+        setIsLoading(true)
         return signInWithEmailAndPassword(auth,email,password)
     }
     const updateUserInfo = (auth,info) =>{
+        setIsLoading(true)
         updateProfile(auth,info)
-            .then(()=>{
-                // alert("ok updated")
+        .then(()=>{
+            // alert("ok updated")
+            setIsLoading(false)
             })
     }
     const logOut = () =>{
-        setIsLoaging(true)
+        setIsLoading(true)
         signOut(auth)
             .then(result=>{
                 setUser({})
-                setIsLoaging(false)
+                setIsLoading(false)
             })
     } 
     return {
         user,
         isLoading,
         auth,
-        setIsLoaging,
+        setIsLoading,
         logOut,
         signInWithGoogle,
         newRegistration,

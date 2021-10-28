@@ -4,12 +4,14 @@ import useAuth from '../../hooks/useAuth';
 import User from './User/User';
 
 const TouristList = () => {
-    const {user} = useAuth();
+    const {user, setIsLoading} = useAuth();
     const [users,setUsers] = useState([]);
     useEffect(()=>{
         fetch('https://pacific-peak-55882.herokuapp.com/users/list')
             .then(res=>res.json())
-            .then(data=>setUsers(data))
+            .then(data=>{
+                setUsers(data);
+            })
     },[])
     return (
         <div className="container text-center">

@@ -18,8 +18,8 @@ const AllExperience = () => {
             })
     },[currentPage])
     return (
-        <>
-            <Row className="g-2">
+        <div className="container">
+            <Row className=" gy-3">
                 {
                     tourExperiences.map(experience=><TourExperience experience={experience} key={experience._id}></TourExperience>)
                 }
@@ -29,7 +29,7 @@ const AllExperience = () => {
                     [...Array(pageCount).keys()].map(number=><button onClick={()=>setCurrentPage(number)} className={currentPage === number? 'btn-success m-1 border-0 rounded' : " m-1 border-0 rounded "} key={number}>{number + 1}</button>)
                 }
             </div>
-        </>
+        </div>
     );
 };
 

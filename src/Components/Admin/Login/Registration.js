@@ -1,6 +1,7 @@
 import React, {  useState } from 'react';
 import { Link } from 'react-router-dom';
-import useAuth from '../../../hooks/useAuth'
+import useAuth from '../../../hooks/useAuth';
+import './registrartion.css';
 
 const Registration = () => {
     const {newRegistration,updateUserInfo,auth,user} = useAuth();
@@ -15,7 +16,7 @@ const Registration = () => {
         joined: (new Date()).toLocaleString()
     }
     
-    const handleRegistrationForm = () =>{
+    const handleRegistrationForm = (e) =>{
         newRegistration(auth,newEmail,newPass)
         .then(result=>{
             updateUserInfo(auth.currentUser, newUser)
@@ -23,6 +24,7 @@ const Registration = () => {
             window.location.reload();
             alert("Account created successfully")
         })
+        e.preventDefault();
     }
     const updateUserToDB = () =>{
         fetch('https://pacific-peak-55882.herokuapp.com/newuser',{
@@ -40,24 +42,26 @@ const Registration = () => {
         })
     }
     return (
-        <div>
-            Registration form
-            <div >
-                <label htmlFor="">
-                    Name:
-                    <input onBlur={(e)=>setNewName(e.target.value)} type="text" placeholder="write your name" />
-                </label><br />
-                <label htmlFor="">
-                    Email:
-                    <input onBlur={(e)=>setNewEmail(e.target.value)} type="email" placeholder="write email address"/>
-                </label><br />
-                <label htmlFor="">
-                    Password:
-                    <input onBlur={(e)=>setNewPass(e.target.value)} type="password" placeholder="type your password"/>
-                </label>
-                <button onClick={handleRegistrationForm} type="">Submit</button>
+        <div className="registration-form container text-center my-4">
+            <h2 className="d-block my-4">Registration form</h2>
+            <div className="d-flex justify-content-center">
+                <form className=" d-flex flex-column align-items-end">
+                    <label htmlFor="">
+                        Name:
+                        <input onBlur={(e)=>setNewName(e.target.value)} type="text" placeholder="write your name" />
+                    </label><br />
+                    <label htmlFor="">
+                        Email:
+                        <input onBlur={(e)=>setNewEmail(e.target.value)} type="email" placeholder="write email address"/>
+                    </label><br />
+                    <label htmlFor="">
+                        Password:
+                        <input onBlur={(e)=>setNewPass(e.target.value)} type="password" placeholder="type your password"/>
+                    </label>
+                    <button onClick={handleRegistrationForm} className="mx-auto my-3 border rounded btn-primary fw-bold px-4 py-1" type="">Submit</button>
+                </form>
             </div>
-            <p>Already Have an account?</p>
+            Already Have an account?
             <Link to='/login'>Login here</Link>
         </div>
     );

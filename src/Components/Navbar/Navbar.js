@@ -11,7 +11,7 @@ import useAuth from '../../hooks/useAuth';
 const NavBar = () => {
     const [toggle,setToggle] = useState(false);
     const [screenWidth,setScreenWidth] = useState(window.innerWidth);
-    const {user, logOut} = useAuth();
+    const {user, logOut, setIsLoading} = useAuth();
     const history = useHistory();
     useEffect(()=>{
         const changeWidth = () =>{
