@@ -52,7 +52,7 @@
 
     --color-border: #e0e6ed;
     --color-border-light: #f0f4f5;
-    --color-bg: #f4f6fb;
+    --color-bg: #dddedd;
     --color-bg-light: #f9fafc;
     --color-bg-masked: rgba(0,0,0,0.4);
 
@@ -61,6 +61,7 @@
     --success-color: #44ce4b;
     --warning-color: #ffc532;
     --alert-color: #ff382d;
+    --black-color: #070707;
     
     /* color pallete  */
     
