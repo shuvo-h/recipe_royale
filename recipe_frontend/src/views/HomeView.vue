@@ -1,9 +1,23 @@
-<script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+<template>
+  <div class="home-test">
+    Home Page q
+    <Layout >
+      <h2>I am Layout</h2>
+    </Layout>
+  </div>
+</template>
+
+<script lang='ts'>
+import Layout from "../components/Layout/PublicLayout.vue"
+export default {
+  components:{
+    Layout
+  },
+}
 </script>
 
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+<style >
+.home-test{
+  color: aqua;
+}
+</style>
