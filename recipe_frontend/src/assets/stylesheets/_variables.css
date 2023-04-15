@@ -1,16 +1,82 @@
-/* font sizes */
-/* spaces */
-/* font weight */
-/* navbar */
-/* colors */
+:root{
+    /* font sizes */
+    --font-size-nano: 0.8rem;
+    --font-size-micro: 1.0rem;
+    --font-size-mini: 1.2rem;
+    --font-size-small: 1.4rem;
+    --font-size-default: 1.6rem;
+    --font-size-medium: 1.8rem;
+    --font-size-large: 2.2rem;
+    --font-size-big: 2.4rem;
+    --font-size-bigger: 3.0rem;
+    --font-size-mega: 3.4rem;
+    --font-size-giga: 4.0rem;
 
-/* color pallete  */
+    
+    /* spaces */
+    --zero: 0;
+    --space-micro: 0.2rem;
+    --space-smaller: 0.4rem;
+    --space-small: 0.8rem;
+    --space-one: 1.0rem;
+    --space-slab: 1.2rem;
+    --space-normal: 1.6rem;
+    --space-two: 2.0rem;
+    --space-medium: 2.4rem;
+    --space-large: 3.2rem;
+    --space-larger: 4.8rem;
+    --space-jumbo: 6.4rem;
+    --space-mege: 10.0rem;
 
-/* thumbnil */
+    /* font weight */
+    --font-weight-feather:100;
+    --font-weight-light:300;
+    --font-weight-normal:400;
+    --font-weight-medium:500;
+    --font-weight-bold:600;
+    --font-weight-black:700;
 
-/* spinner loader  */
+    /* layout + navbar */
+    --nav-bar-width: 23rem;
+    --nav-bar-height: 5.6rem;
+    --layout-width: 23rem;
+    --layout-min-height: 100vh;
 
-/* snackbar default  */
+    /* colors */
+    --color-receipe: #6ebe3b;
+    --color-gray: #6e6f73;
+    --color-light-gray: #747677;
+    --color-white: #fff;
+    --color-body: #3c4858;
+    --color-heading: #1f2d3d;
 
-/* transitions  */
+    --color-border: #e0e6ed;
+    --color-border-light: #f0f4f5;
+    --color-bg: #f4f6fb;
+    --color-bg-light: #f9fafc;
+    --color-bg-masked: rgba(0,0,0,0.4);
 
+    --primary-color: var(--color-receipe);
+    --secondary-color: #5d7592;
+    --success-color: #44ce4b;
+    --warning-color: #ffc532;
+    --alert-color: #ff382d;
+    
+    /* color pallete  */
+    
+    /* thumbnil */
+    
+    /* spinner loader  */
+    
+    /* snackbar default  */
+    --receipe-snackbar-bg: #323232;
+    --receipe-snackbar-bg-btn: #ffeb3b;
+
+    --swift-easy-out-duration: 0.4s;
+    --swift-easy-out-timing-function: cubic-bezier(0.25,0.8,0.25,1);
+    --swift-easy-out: all var(--swift-easy-out-duration) var(--swift-easy-out-timing-function);
+
+    /* transitions  */
+    --transition-ease-in: all 0.250s ease-in;
+
+}    
